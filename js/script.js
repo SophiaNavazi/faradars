@@ -1,4 +1,5 @@
 "use strict";
+// slider
 const imgELs = document.querySelectorAll(".banner >img ");
 const prevBtn = document.querySelector(".prev ");
 const nextBtn = document.querySelector(".next");
@@ -19,3 +20,27 @@ prevBtn.addEventListener("click", () => {
   }
   imgELs[currentIndex].classList.add("active");
 });
+
+// cards
+const productEl = document.querySelector(".titlePr");
+const getCard = async () => {
+  try {
+    const res = await fetch(
+      "https://faradars.org/api/client/v2/landings/36486/products?page=1&limit=20",
+    );
+    const data = await res.json();
+    data?.map((pr) => {
+      productEl.innerHTML += `<div class="card">
+    <img src=${pr?.png_image}>
+      <div class="card-content">
+     <h2>${pr?.title?.split(" ")?.splice(0, 2)?.join(" ")}...</h2>
+      <p>${pr?.id?.split(" ")?.splice(0, 8)?.join(" ")}...</p>
+      <span>price : $${pr?.price}</span>
+      </div>
+      </div>`;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+getCard();

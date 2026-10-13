@@ -7,16 +7,23 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="login">
+    <div class="login active">
       <h2>Login</h2>
       <form>
-        <label for="username"></label>
-        <input type="text" placeholder="Username" required />
-        <label for="password"></label>
-        <input type="password" placeholder="Password" required />
-        <button class="loginBtn" type="submit">Login Now</button>
+        <label for="phone" ></label>
+        <input type="text" id="phone" placeholder="your Phone Number" />
+        <button type="submit">Send OTP</button>
       </form>
     </div>
-    <script src="js/login.js"></script> 
+    <div class="otp">
+      <h2>OTP Page</h2>
+      <form>
+        <label for="otp">Enter OTP : </label>
+        <input type="text" id="otp" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script src="js/login.js"></script>
   </body>
 </html>

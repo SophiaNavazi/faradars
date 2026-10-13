@@ -57,7 +57,7 @@ otpForm.addEventListener("submit", async (e) => {
       return alert(data?.message);
     }
     alert(data?.message);
-    otpEl.classList.remove("active");
+    window.location.pathname = "/index.html";
   } catch (error) {
     console.log(error);
   }

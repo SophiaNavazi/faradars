@@ -44,3 +44,13 @@ const getCard = async () => {
   }
 };
 getCard();
+
+// TO Do List
+const toDoList = document.querySelector(".toDoList");
+const toDo = document.querySelector(".toDo");
+const doneBtn = document.querySelector(".doneBtn");
+
+doneBtn.addEventListener("click", () => {
+  window.location.pathname = "/todo.html";
+  doneBtn.classList.toggle("active");
+});
